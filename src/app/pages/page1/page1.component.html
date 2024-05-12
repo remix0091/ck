@@ -1,0 +1,46 @@
+<div class="main">
+    <h1>Автозапчасти</h1>
+    <div>
+        <label>Название</label>
+        <input class ="lg-text-input" name="name" [(ngModel)]="name" />
+    </div>
+    <div>
+        <label>Номер</label>
+        <input class ="lg-text-input" name="nomer" [(ngModel)]="nomer"/>
+    </div>
+    <div>
+        <label>Наличие</label>
+        <input class ="lg-text-input-check" type="checkbox" name="done" [(ngModel)]="done"/>
+    </div>
+    <div>
+      <label>Дата изготовления</label>
+      <input class ="lg-text-input" name="data" [(ngModel)]="data"/>
+    </div>
+    <div>
+      <label>Подходит для</label>
+      <input class ="lg-text-input" name="cross" [(ngModel)]="cross"/>
+    </div>
+    <div>
+        <button class="btn-primary" (click)="addItem()">Добавить</button>
+    </div>
+</div>
+<div>
+    <table class="table">
+        <tbody>
+          <tr>
+            <th>Название</th>
+            <th>Номер</th>
+            <th>Наличие</th>
+            <th>Дата изготовления</th>
+            <th>Подходит для</th>
+          </tr>
+          <tr *ngFor="let item of items">
+            <td>{{item.name}}</td>
+            <td>{{item.nomer}}</td>
+            <td>{{item.done}}</td>
+            <td>{{item.data}}</td>
+            <td>{{item.cross}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
